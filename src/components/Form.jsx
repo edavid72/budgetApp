@@ -17,7 +17,7 @@ const Form = () => {
   const handleSubmitForm = (e) => {
     e.preventDefault();
 
-    //!Validate
+    //!Validates
     if (
       expenseName.trim() === '' ||
       expenseAmount < 1 ||
