@@ -1,13 +1,220 @@
-body {
+/* apply a natural box layout model to all elements, but allowing components to change */
+*,
+html {
+  box-sizing: border-box;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+
+/* 2. General settings */
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* End */
+
+body {
+  height: 100vh;
+  background-image: url(./img/background.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+:root {
+  --font01: 'Roboto Mono', monospace;
+  --font02: 'Titillium Web', sans-serif;
+  --color01: #368B85;
+}
+
+.container {
+  height: 100vh;
+  background-color: #82809257;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 3rem;
+  color: var(--color01);
+  font-family: var(--font02);
+  padding: 1rem;
+}
+
+.subtitle {
+  font-family: var(--font02);
+  font-size: 1.3rem;
+  padding: 1rem;
+  color: #3cb47e;
+}
+
+
+.error-msg {
+  width: 80%;
+  margin: 0 auto;
+  font-family: var(--font01);
+  background-color: #f3abb0 ;
+  color: #DA0037;
+  padding: .5rem;
+  font-size: 1.1rem;
+  text-align: center;
+  border-radius: 8px;
+}
+
+form {
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 1rem;
+  font-family: var(--font02);
+  font-size: 1.1rem;
+  color: 343A40;
+}
+
+.input-form {
+  margin: 0 auto;
+  width: 100%;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border: none;
+  border-radius: 8px;
+}
+
+.button {
+  margin: 0 auto;
+  width: 100%;
+  padding: .6rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  background-color: #393E46;
+  color: #fff;
+}
+
+@media only screen and (min-width: 1366px) {
+
+  .title {
+    font-size: 3.5rem;
+  }
+
+  .subtitle {
+    font-size: 2rem;
+  }
+
+  form {
+    width: 100%;
+    margin-top: 3.5rem;
+    font-size: 1.5rem;
+  }
+
+  .error-msg {
+    width:80%;
+    margin: 0 auto;
+    font-family: var(--font01);
+    background-color: #f3abb0;
+    color: #DA0037;
+    padding: .5rem;
+    font-size: 1.1rem;
+    text-align: center;
+    border-radius: 8px;
+    margin-bottom: .5rem;
+  }
+
+
+  .input-form {
+    width: 50%;
+    padding: 1.2rem;
+    margin-bottom: 1rem;
+  }
+
+  .button {
+    width: 50%;
+    padding: .8rem;
+  }
+
+}
+
+/* ///////////////////////////////////////////////////////////////////////// */
+
+.app {
+  flex-direction: column;
+  width: 80%;
+  margin: 0 auto;
+}
+
+label {
+  font-family: var(--font01);
+  font-size: 1.1rem;
+  color: #393E46;
+}
+
+.input-expense {
+  font-size: 1rem;
+  padding: .5rem;
+  border: none;
+  border-radius: 8px;
+  font-family: var(--font01);
+  margin-bottom: 1rem;
+}
+
+
+.button-second {
+  margin: 0 auto;
+  width: 100%;
+  padding: .6rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  background-color: #393E46;
+  color: #fff;
+}
+
+@media only screen and (min-width: 1366px) {
+  .app {
+    flex-direction: row;
+  }
+
+  .section-app {
+    width: 50%;
+  }
+
+  .field-form {
+    width: 100%;
+  }
+
+  label {
+    font-size: 1.7rem;
+    padding: .5rem;
+  }
+
+
+  .input-expense {
+    font-size: 1.5rem;
+    padding: 1rem;
+    border: none;
+    border-radius: 8px;
+    font-family: var(--font01);
+    margin-bottom: 1rem;
+  }
+
+  .button-second {
+    margin: 0 auto;
+    width: 100%;
+    padding: .6rem;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    background-color: #393E46;
+    color: #fff;
+  }
 }
