@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import ErrorMsg from './ErrorMsg';
+import shortid from 'shortid';
+import PropTypes from 'prop-types';
 
-const Form = () => {
+const Form = ({ setExpense, setCreateExpense }) => {
   const [expenseName, setExpenseName] = useState('');
   const [expenseAmount, setExpenseAmount] = useState(0);
   const [error, setError] = useState(false);
@@ -17,7 +19,7 @@ const Form = () => {
   const handleSubmitForm = (e) => {
     e.preventDefault();
 
-    //!Validates
+    //!Validate
     if (
       expenseName.trim() === '' ||
       expenseAmount < 1 ||
@@ -29,10 +31,20 @@ const Form = () => {
     setError(false);
 
     //!Build Expense Object
+    const expense = {
+      name: expenseName,
+      amount: expenseAmount,
+      id: shortid.generate(),
+    };
 
+    /* console.log(expense); */
     //!Pass the expense object to the main component
+    setExpense(expense);
+    setCreateExpense(true);
 
     //!Reset the Form
+    setExpenseName('');
+    setExpenseAmount(0);
   };
 
   return (
@@ -48,6 +60,7 @@ const Form = () => {
             placeholder="food, gasoline, books, etc."
             className="input-expense"
             onChange={handleChangeName}
+            value={expenseName}
           />
         </div>
 
@@ -58,6 +71,7 @@ const Form = () => {
             placeholder="$ 1"
             className="input-expense"
             onChange={handleChangeAmount}
+            value={expenseAmount}
           />
         </div>
 
@@ -65,6 +79,11 @@ const Form = () => {
       </form>
     </>
   );
+};
+
+Form.propTypes = {
+  setExpense: PropTypes.func.isRequired,
+  setCreateExpense: PropTypes.func.isRequired,
 };
 
 export default Form;

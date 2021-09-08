@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import ErrorMsg from './ErrorMsg';
+import PropTypes from 'prop-types';
 
 const BudgetStart = ({ setBudget, setRemaining, setShowBudgetStart }) => {
   const [initialAmount, setInitialAmount] = useState(0);
@@ -45,6 +46,12 @@ const BudgetStart = ({ setBudget, setRemaining, setShowBudgetStart }) => {
       </form>
     </div>
   );
+};
+
+BudgetStart.propTypes = {
+  setBudget: PropTypes.func.isRequired,
+  setRemaining: PropTypes.func.isRequired,
+  setShowBudgetStart: PropTypes.func.isRequired,
 };
 
 export default BudgetStart;

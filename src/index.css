@@ -64,7 +64,7 @@ body {
   width: 80%;
   margin: 0 auto;
   font-family: var(--font01);
-  background-color: #f3abb0 ;
+  background-color: #f3abb0;
   color: #DA0037;
   padding: .5rem;
   font-size: 1.1rem;
@@ -108,7 +108,7 @@ form {
   }
 
   .subtitle {
-    font-size: 2rem;
+    font-size: 2.7rem;
   }
 
   form {
@@ -118,7 +118,7 @@ form {
   }
 
   .error-msg {
-    width:80%;
+    width: 80%;
     margin: 0 auto;
     font-family: var(--font01);
     background-color: #f3abb0;
@@ -185,6 +185,7 @@ label {
   }
 
   .section-app {
+    margin-top: 1rem;
     width: 50%;
   }
 
@@ -216,5 +217,132 @@ label {
     cursor: pointer;
     background-color: #393E46;
     color: #fff;
+  }
+}
+
+
+/* Expenses List */
+.expenses {
+  padding: 1rem;
+}
+
+.expenses h2 {
+  font-family: var(--font01);
+  font-size: 1.4rem;
+  text-align: center;
+  padding: .5rem;
+  color: #3cb47e;
+  margin-bottom: 1rem;
+}
+
+.expense {
+  font-family: var(--font01);
+  padding: .2rem;
+  display: flex;
+  justify-content: space-between;
+  border: none;
+  border-bottom: solid 1px #6c6c8d93;
+  margin-top: .6rem;
+  align-items: center;
+}
+
+.expense-name {
+  font-size: 1.5rem;
+  text-transform: capitalize;
+  font-weight: lighter;
+}
+
+.expense-amount {
+  text-align: center;
+  width: 35%;
+  border-radius: 4px;
+  padding: .4rem;
+  font-size: 1.1rem;
+  color: #fff;
+  background-color: #11324D;
+}
+
+@media only screen and (min-width: 1366px) {
+
+  .expenses {
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.644);
+    width: 95%;
+    margin: 0 auto;
+  }
+
+  .expenses h2 {
+    font-size: 2.7rem;
+  }
+
+  .expense {
+    padding: .5rem;
+    margin-top: .5rem;
+  }
+
+  .expense-name {
+    font-size: 1.7rem;
+    font-weight: lighter;
+  }
+
+  .expense-amount {
+    text-align: center;
+    width: 20%;
+    font-size: 1.3rem;
+    padding: .8rem;
+    font-weight: bold;
+  }
+}
+
+
+/* Budget Control section */
+.budget-control {
+  width: 80%;
+  margin-top: 2rem;
+  margin: 0 auto;
+}
+
+.budget,
+.remaining {
+  font-size: 1rem;
+  font-weight: lighter;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 6px;
+  border: none;
+  font-family: var(--font01);
+  padding: .5rem;
+}
+
+.budget {
+  background-color: #43afda;
+  margin-bottom: .5rem;
+}
+
+
+.alert-danger {
+  background-color: #f05d73;
+}
+
+.alert-warning {
+  background-color: #f0c46e;
+}
+
+.alert-success {
+  background-color: #33e087;
+}
+
+@media only screen and (min-width: 1366px) {
+
+  .budget-control {
+    width: 95%;
+    margin-top: 2rem;
+  }
+
+  .budget,
+  .remaining {
+    padding: .8rem;
+    font-weight: lighter;
+    font-size: 1.5rem;
   }
 }
